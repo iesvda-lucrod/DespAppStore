@@ -23,12 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching products:', error));
 });
 
-// Function to add a product to the cart (simplified)
-function addToCart(productId) {
-    console.log(`Product ${productId} added to cart`);
-    
-    // You could use localStorage to store the cart items or send to an API.
-}
+
+// Function to add a product to the cart
+
 
 
 

@@ -1,5 +1,5 @@
-//Mocking localstorage as it its part of the browser api
-global.localStorage = {
+ //Mocking localstorage as it its part of the browser api
+    global.localStorage = {
     getItem: () => { return null },
     setItem: jest.fn(),
     removeItem: jest.fn(),
@@ -13,7 +13,10 @@ global.document = dom.window.document;
 global.window = dom.window;
 
 //Test
-const { addToCart, getCartSummary } = require('../cart.js');  // Assuming you have cart.js
+//import { addToCart, getCartSummary } from "../cart.js";
+
+const { addToCart, getCartSummary } = require("../cart.js");
+console.log("ATC", addToCart);
 describe('addToCart', () => {
     it('should add a product to the cart', () => {
         addToCart(1); // Add product with id 1 to the cart

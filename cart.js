@@ -1,13 +1,5 @@
 //CART
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-function addToCart(productId) {
-    console.log("adtocart1");
-    const product = { id: productId, quantity: 1 }; // Basic structure
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartSummary();
-}
+let cart = JSON.parse(localStorage.getItem('cart')) || []; 
 
 function updateCartSummary() {
     const cartSummary = document.getElementById('cart-summary');
@@ -19,6 +11,15 @@ function updateCartSummary() {
     });
 }
 
+function addToCart(productId) {
+    console.log("adtocart1");
+    const product = { id: productId, quantity: 1 }; // Basic structure
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartSummary();
+}
+
+
 function getCartSummary() {
     return cart;
 }
@@ -26,3 +27,4 @@ function getCartSummary() {
 updateCartSummary();
 
 //export {addToCart, getCartSummary};
+//module.exports = { addToCart, getCartSummary};
